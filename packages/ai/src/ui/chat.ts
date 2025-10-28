@@ -582,6 +582,7 @@ export abstract class AbstractChat<UI_MESSAGE extends UIMessage> {
       if (trigger === 'resume-stream') {
         const reconnect = await this.transport.reconnectToStream({
           chatId: this.id,
+          abortSignal: activeResponse.abortController.signal,
           metadata,
           headers,
           body,
