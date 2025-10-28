@@ -266,6 +266,7 @@ export abstract class HttpChatTransport<UI_MESSAGE extends UIMessage>
         getRuntimeEnvironmentUserAgent(),
       ),
       credentials,
+      signal: options.abortSignal,
     });
 
     // no active stream found, so we do not resume
